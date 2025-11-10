@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <h1 class="site-title">Product Gallery</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="gallery container">
+      <article class="card" data-delay="0">
+        <div class="card-media">
+          <img src="basket_of_banana-removebg-preview.png" alt="Product 1" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Product 1</h3>
+          <p class="price">$29.99</p>
+          <p class="desc">A compact and powerful gadget to brighten your day.</p>
+          <div class="card-actions"><button class="btn">Buy now</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-delay="150">
+        <div class="card-media">
+          <img src="basket_of_orange-removebg-preview.png" alt="Product 2" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Product 2</h3>
+          <p class="price">$49.99</p>
+          <p class="desc">Sleek design meets top-tier performance for everyday use.</p>
+          <div class="card-actions"><button class="btn">Buy now</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-delay="300">
+        <div class="card-media">
+          <img src="basket_of_pawpaw-removebg-preview.png" alt="Product 3" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Product 3</h3>
+          <p class="price">$79.99</p>
+          <p class="desc">Premium materials and craftsmanship for those who want the best.</p>
+          <div class="card-actions"><button class="btn">Buy now</button></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
