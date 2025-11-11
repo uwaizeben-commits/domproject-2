@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  padding: 20px;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-container h1 {
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Pricing Card Component */
+.pricing-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Featured/highlight badge */
+.pricing-card.featured {
+  border: 2px solid #667eea;
+  transform: scale(1.05);
+  margin-bottom: 10px;
+}
+
+.pricing-card.featured::before {
+  content: 'POPULAR';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.pricing-card.featured {
+  padding-top: 50px;
+}
+
+/* Card Title */
+.pricing-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1a202c;
+}
+
+/* Price Display */
+.pricing-card-price {
+  font-size: 42px;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+
+.pricing-card-price span {
+  font-size: 16px;
+  color: #718096;
+  font-weight: 400;
+}
+
+.pricing-card-description {
+  font-size: 14px;
+  color: #718096;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* Features List */
+.pricing-features {
+  list-style: none;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 14px;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: #48bb78;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+/* Call-to-action Button */
+.pricing-card-btn {
+  background: #667eea;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.pricing-card-btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+.pricing-card-btn:active {
+  transform: translateY(0);
+}
+
+/* Secondary button style for non-featured */
+.pricing-card:not(.featured) .pricing-card-btn {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.pricing-card:not(.featured) .pricing-card-btn:hover {
+  background: #cbd5e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pricing-container h1 {
+    font-size: 26px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-container {
+    padding: 0;
+  }
+
+  .pricing-card {
+    padding: 20px;
+  }
+
+  .pricing-card-price {
+    font-size: 32px;
+  }
+
+  .pricing-card-title {
+    font-size: 20px;
+  }
+}
