@@ -28,49 +28,49 @@ class MusicPlayer {
       {
         title: 'Essence',
         artist: 'Davido ft. Wizkid',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+        url: 'davido1.mp3',
         color: '#FF6B6B'
       },
       {
         title: 'Fall',
         artist: 'Davido',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+        url: 'davido2.mp3',
         color: '#4ECDC4'
       },
       {
         title: 'Assurance',
         artist: 'Davido',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+        url: 'davido3.mp3',
         color: '#FFE66D'
       },
       {
         title: 'If',
         artist: 'Davido',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+        url: 'davido4.mp3',
         color: '#95E1D3'
       },
       {
         title: 'Risky (Remix)',
         artist: 'Davido ft. Popcaan',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+        url: 'davido5.mp3',
         color: '#C7CEEA'
       },
       {
         title: 'Blow My Mind',
         artist: 'Davido ft. Chris Brown',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+        url: 'davido6.mp3',
         color: '#FF8C94'
       },
       {
         title: 'A Good Friend',
         artist: 'Davido ft. H.E.R.',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+        url: 'davido7.mp3',
         color: '#FCBAD3'
       },
       {
         title: 'Uptown',
         artist: 'Davido',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+        url: 'davido8.mp3',
         color: '#A8D8EA'
       }
     ];
@@ -122,7 +122,10 @@ class MusicPlayer {
     this.updatePlaylistUI();
     
     if (this.isPlaying) {
-      this.audio.play().catch(err => console.warn('Play error:', err));
+      this.audio.play().catch(err => {
+        console.warn('Play error:', err);
+        this.handleAudioError();
+      });
     }
   }
 
@@ -230,7 +233,12 @@ class MusicPlayer {
 
   handleAudioError() {
     console.error('Audio playback error');
-    alert('Error loading audio. Some browsers may block remote audio. Try running locally or use a different browser.');
+    const errorMsg = `⚠️ Unable to load audio. 
+This player requires audio files in the same directory.
+Please add .mp3 files named: davido1.mp3, davido2.mp3, etc.
+
+For demo purposes, the player UI is fully functional!`;
+    alert(errorMsg);
   }
 
   escapeHtml(text) {
