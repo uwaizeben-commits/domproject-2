@@ -14,6 +14,8 @@ class MusicPlayer {
     this.durationDisplay = document.getElementById('duration');
     this.volumeDisplay = document.getElementById('volumeDisplay');
     this.playlistEl = document.getElementById('playlist');
+    this.playlistContainer = document.getElementById('playlistContainer');
+    this.playlistToggleBtn = document.getElementById('playlistToggleBtn');
     this.albumArt = document.getElementById('albumArt');
     this.themeToggle = document.getElementById('theme-toggle');
 
@@ -70,6 +72,7 @@ class MusicPlayer {
     this.progressBar.addEventListener('input', (e) => this.seek(e.target.value));
     this.volumeSlider.addEventListener('input', (e) => this.setVolume(e.target.value));
     this.themeToggle.addEventListener('click', () => this.toggleTheme());
+    this.playlistToggleBtn.addEventListener('click', () => this.togglePlaylist());
 
     // Audio events
     this.audio.addEventListener('timeupdate', () => this.updateProgress());
@@ -209,6 +212,10 @@ class MusicPlayer {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+  }
+
+  togglePlaylist() {
+    this.playlistContainer.classList.toggle('hidden');
   }
 }
 
