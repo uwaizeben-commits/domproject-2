@@ -26,34 +26,52 @@ class MusicPlayer {
     this.isPlaying = false;
     this.tracks = [
       {
-        title: 'Summer Vibes',
-        artist: 'The Melody Makers',
+        title: 'Essence',
+        artist: 'Davido ft. Wizkid',
         url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
         color: '#FF6B6B'
       },
       {
-        title: 'Night Dreams',
-        artist: 'Luna Echo',
+        title: 'Fall',
+        artist: 'Davido',
         url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
         color: '#4ECDC4'
       },
       {
-        title: 'Digital Horizon',
-        artist: 'Sync Wave',
+        title: 'Assurance',
+        artist: 'Davido',
         url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
         color: '#FFE66D'
       },
       {
-        title: 'Ocean Breeze',
-        artist: 'Coastal Harmony',
+        title: 'If',
+        artist: 'Davido',
         url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
         color: '#95E1D3'
       },
       {
-        title: 'Urban Pulse',
-        artist: 'City Lights',
+        title: 'Risky (Remix)',
+        artist: 'Davido ft. Popcaan',
         url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
         color: '#C7CEEA'
+      },
+      {
+        title: 'Blow My Mind',
+        artist: 'Davido ft. Chris Brown',
+        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+        color: '#FF8C94'
+      },
+      {
+        title: 'A Good Friend',
+        artist: 'Davido ft. H.E.R.',
+        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+        color: '#FCBAD3'
+      },
+      {
+        title: 'Uptown',
+        artist: 'Davido',
+        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+        color: '#A8D8EA'
       }
     ];
 
