@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="player-wrapper">
+    <!-- Header with theme toggle -->
+    <header class="player-header">
+      <h1 class="player-title">🎵 Music Player</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <!-- Main player card -->
+    <div class="player-card">
+      <!-- Album art -->
+      <div class="album-art" id="albumArt">
+        <div class="album-placeholder">♪</div>
+      </div>
+
+      <!-- Now playing info -->
+      <div class="now-playing">
+        <h2 class="track-title" id="trackTitle">Select a track</h2>
+        <p class="track-artist" id="trackArtist">Unknown Artist</p>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-container">
+        <span class="time-display" id="currentTime">0:00</span>
+        <div class="progress-bar">
+          <input 
+            type="range" 
+            id="progressBar" 
+            class="progress-slider" 
+            min="0" 
+            max="100" 
+            value="0"
+            aria-label="Seek track"
+          >
+        </div>
+        <span class="time-display" id="duration">0:00</span>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button class="control-btn" id="prevBtn" aria-label="Previous track">⏮</button>
+        <button class="control-btn play-btn" id="playBtn" aria-label="Play/Pause">▶</button>
+        <button class="control-btn" id="nextBtn" aria-label="Next track">⏭</button>
+      </div>
+
+      <!-- Volume control -->
+      <div class="volume-control">
+        <label for="volumeSlider" class="volume-label">🔊</label>
+        <input 
+          type="range" 
+          id="volumeSlider" 
+          class="volume-slider" 
+          min="0" 
+          max="100" 
+          value="70"
+          aria-label="Volume"
+        >
+        <span class="volume-display" id="volumeDisplay">70%</span>
+      </div>
+    </div>
+
+    <!-- Playlist -->
+    <div class="playlist-container">
+      <h3 class="playlist-title">Playlist</h3>
+      <div class="playlist" id="playlist"></div>
+    </div>
+  </div>
+
+  <!-- Hidden audio element for playback -->
+  <audio id="audioPlayer" crossorigin="anonymous"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
