@@ -18,7 +18,6 @@ class MusicPlayer {
     this.playlistToggleBtn = document.getElementById('playlistToggleBtn');
     this.playlistModal = document.getElementById('playlistModal');
     this.closePlaylistBtn = document.getElementById('closePlaylistBtn');
-  this.addTrackBtn = document.getElementById('addTrackBtn');
     this.albumArt = document.getElementById('albumArt');
     this.themeToggle = document.getElementById('theme-toggle');
 
@@ -94,7 +93,6 @@ class MusicPlayer {
     this.volumeSlider.addEventListener('input', (e) => this.setVolume(e.target.value));
     this.themeToggle.addEventListener('click', () => this.toggleTheme());
     this.playlistToggleBtn.addEventListener('click', () => this.togglePlaylist());
-  if (this.addTrackBtn) this.addTrackBtn.addEventListener('click', () => this.promptAddTrack());
     this.closePlaylistBtn.addEventListener('click', () => this.closePlaylist());
     this.playlistModal.addEventListener('click', (e) => {
       if (e.target === this.playlistModal) this.closePlaylist();
@@ -208,30 +206,7 @@ class MusicPlayer {
     });
   }
 
-  // Prompt the user to add a remote audio URL (useful for YouTube Audio Library, FMA, Internet Archive links)
-  promptAddTrack() {
-    const url = prompt('Paste an MP3 URL (http(s)://...)');
-    if (!url) return;
-    const title = prompt('Track title (optional)', 'New Track') || 'New Track';
-    const artist = prompt('Artist (optional)', 'Unknown') || 'Unknown';
-
-    // Basic validation
-    try {
-      const u = new URL(url);
-      // add to playlist
-      const color = this.randomColor();
-      this.tracks.push({ title, artist, url: u.toString(), color });
-      this.renderPlaylist();
-      alert('Track added to playlist. If playback is blocked by CORS, try a different URL or use local files.');
-    } catch (e) {
-      alert('Invalid URL');
-    }
-  }
-
-  randomColor() {
-    const colors = ['#FF6B6B','#4ECDC4','#FFE66D','#95E1D3','#C7CEEA','#FF8C94','#FCBAD3','#A8D8EA'];
-    return colors[Math.floor(Math.random()*colors.length)];
-  }
+  
 
   updatePlaylistUI() {
     this.playlistEl.querySelectorAll('.playlist-item').forEach((item, index) => {
