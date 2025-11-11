@@ -16,6 +16,8 @@ class MusicPlayer {
     this.playlistEl = document.getElementById('playlist');
     this.playlistContainer = document.getElementById('playlistContainer');
     this.playlistToggleBtn = document.getElementById('playlistToggleBtn');
+    this.playlistModal = document.getElementById('playlistModal');
+    this.closePlaylistBtn = document.getElementById('closePlaylistBtn');
     this.albumArt = document.getElementById('albumArt');
     this.themeToggle = document.getElementById('theme-toggle');
 
@@ -73,6 +75,10 @@ class MusicPlayer {
     this.volumeSlider.addEventListener('input', (e) => this.setVolume(e.target.value));
     this.themeToggle.addEventListener('click', () => this.toggleTheme());
     this.playlistToggleBtn.addEventListener('click', () => this.togglePlaylist());
+    this.closePlaylistBtn.addEventListener('click', () => this.closePlaylist());
+    this.playlistModal.addEventListener('click', (e) => {
+      if (e.target === this.playlistModal) this.closePlaylist();
+    });
 
     // Audio events
     this.audio.addEventListener('timeupdate', () => this.updateProgress());
@@ -174,6 +180,7 @@ class MusicPlayer {
       item.addEventListener('click', () => {
         this.loadTrack(index);
         this.togglePlay();
+        this.closePlaylist();
       });
     });
   }
@@ -215,7 +222,11 @@ class MusicPlayer {
   }
 
   togglePlaylist() {
-    this.playlistContainer.classList.toggle('hidden');
+    this.playlistModal.classList.add('active');
+  }
+
+  closePlaylist() {
+    this.playlistModal.classList.remove('active');
   }
 }
 
